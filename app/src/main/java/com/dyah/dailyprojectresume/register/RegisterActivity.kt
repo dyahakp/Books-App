@@ -34,15 +34,13 @@ class RegisterActivity : AppCompatActivity() {
                         pref.put(Constant.PREF_PASSWORD, password.toString())
                        pref.put(Constant.PREF_ADDRESS, password.toString())
                        pref.put(Constant.PREF_NUMBER_PHONE, numberPhone.toString())
-
+                        intentTo(RegisteredActivity::class.java)
                     }
                 }
                 binding.tvRegisterNow.setOnClickListener {
                     intentTo(LoginActivity::class.java)
                 }
-                binding.btnRegister.setOnClickListener {
-                    intentTo(RegisteredActivity::class.java)
-                }
+
             }
 
 

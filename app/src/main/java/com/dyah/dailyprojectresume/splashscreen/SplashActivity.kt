@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.dyah.dailyprojectresume.register.RegisterActivity
 import com.dyah.dailyprojectresume.databinding.ActivitySplashBinding
+import com.dyah.dailyprojectresume.login.LoginActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -20,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar?.hide()
         CoroutineScope(Dispatchers.Main).launch {
             delay(6000L)
-            val intent = Intent (applicationContext, RegisterActivity::class.java)
+            val intent = Intent (applicationContext, LoginActivity::class.java)
             startActivity(intent)
         finish()
         }

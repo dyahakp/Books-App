@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 
 class PreferenceHelper(context: Context) {
 
-    private val PREF_NAME = "sharedPreference"
+    private val PREF_NAME = "sharedPref"
     private val sharedPref: SharedPreferences
     val editor: SharedPreferences.Editor
 

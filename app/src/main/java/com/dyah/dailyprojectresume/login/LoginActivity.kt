@@ -22,21 +22,19 @@ class LoginActivity : AppCompatActivity() {
         pref = PreferenceHelper(this)
         supportActionBar?.hide()
         binding.btnLogin.setOnClickListener {
-            val Pemail = pref.getString(Constant.PREF_EMAIL)
-            val Ppassword = pref.getString(Constant.PREF_PASSWORD)
+            val sharedEmail = pref.getString(Constant.PREF_EMAIL)
+            val sharedPassword = pref.getString(Constant.PREF_PASSWORD)
             var email = binding.etEmail.text.toString()
             var password = binding.etPassword.text.toString()
 
-            if (email.contains(Pemail.toString()) || password.contains(Ppassword.toString()))
+            if (email.contains(sharedEmail.toString()) && password.contains(sharedPassword.toString()))
             {
                 pref.put(Constant.PREF_IS_LOGIN, true)
-                Toast.makeText(applicationContext, "Login Account Sucessfull", Toast.LENGTH_LONG).show()
-                intentTo(ProfileActivity::class.java)
+                Toast.makeText(applicationContext, "Login Berhasil", Toast.LENGTH_LONG).show()
+                intentTo(HomeActivity::class.java)
             }
         }
-        binding.btnLogin.setOnClickListener {
-            intentTo(HomeActivity::class.java)
-        }
+
 
         binding.tvRegister.setOnClickListener {
             intentTo(RegisterActivity::class.java)
